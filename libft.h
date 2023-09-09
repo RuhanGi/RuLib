@@ -6,7 +6,7 @@
 /*   By: mgoltay <mgoltay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:32:41 by mgoltay           #+#    #+#             */
-/*   Updated: 2023/09/09 14:38:05 by mgoltay          ###   ########.fr       */
+/*   Updated: 2023/09/09 15:26:47 by mgoltay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ int		ft_lstsize(t_list *lst);
 void	delone(t_list **ptr);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	lstclear(t_list **lst);
 
 // list_actions.c
 void	ft_lstadd_front(t_list **lst, t_list *new);

@@ -6,7 +6,7 @@
 /*   By: mgoltay <mgoltay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:32:10 by mgoltay           #+#    #+#             */
-/*   Updated: 2023/09/09 14:56:38 by mgoltay          ###   ########.fr       */
+/*   Updated: 2023/09/09 15:26:23 by mgoltay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,31 +57,15 @@ void	delone(t_list **ptr)
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*a;
+	t_list	*next;
 
 	if (!lst || !del)
 		return ;
 	while (*lst)
 	{
-		a = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
-		*lst = a;
-	}
-	lst = NULL;
-}
-
-void	lstclear(t_list **lst)
-{
-	t_list	*next;
-
-	if (!lst || !(*lst))
-		return ;
-	while (*lst)
-	{
 		next = (*lst)->next;
 		if ((*lst)->content)
-			free((*lst)->content);
+			del((*lst)->content);
 		free(*lst);
 		*lst = next;
 	}
